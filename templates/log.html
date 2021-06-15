@@ -1,0 +1,127 @@
+{% extends 'base2.html' %}
+{% block content %}
+<div >
+    <h2><center><font>Your selling items</center></font></center></h2>
+</div>
+<div>
+    <p class="p">.</p>
+</div>
+<div >
+    <h2><center><font color="green">Your items in past</center></font></center></h2>
+</div>
+{% for i in pitem%}
+<table width=100%>
+    <tr>
+        <td colspan="2"><h1><b>{{i.name}}</b></h1></td>
+        <td rowspan="5"><img src="{{i.profile.url}}" class="img" alt=""></td>
+    </tr>
+    <tr>
+        <td colspan="2"><h4><b>{{i.short_description}}</b></h4></td>
+    </tr>
+    <tr>
+        <td><h3><b>Current Price : {{i.currentPrice}}</b></h3></td>
+        <td><h3><b>Base Price : {{i.basePrice}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Auction Date : {{i.start_date}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Sold status : {{i.sold}}</b></h3></td>
+    </tr>
+</table>
+<hr>
+{%endfor%}
+<div>
+    <p class="p">.</p>
+</div>
+
+<div >
+    <h2><center><font color="green">Your items in live</center></font></center></h2>
+</div>
+
+{% for i in litem%}
+<table width=100% >
+    <tr>
+        <td colspan="2"><h1><b>{{i.name}}</b></h1></td>
+        <td rowspan="5"><img src="{{i.profile.url}}" class="img" alt=""></td>
+    </tr>
+    <tr>
+        <td colspan="2"><h4><b>{{i.short_description}}</b></h4></td>
+    </tr>
+    <tr>
+        <td><h3><b>Current Price : {{i.currentPrice}}</b></h3></td>
+        <td><h3><b>Base Price : {{i.basePrice}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Auction Date : {{i.start_date}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Sold status : {{i.sold}}</b></h3></td>
+    </tr>
+</table>
+<hr>
+{%endfor%}
+<div>
+    <p class="p">.</p>
+</div>
+
+<div >
+    <h2><center><font color="green">Your items in future</center></font></center></h2>
+</div>
+{% for i in fitem%}
+<table width=100%>
+    <tr>
+        <td colspan="2"><h1><b>{{i.name}}</b></h1></td>
+        <td rowspan="5"><img src="{{i.profile.url}}" class="img" alt=""></td>
+    </tr>
+    <tr>
+        <td colspan="2"><h4><b>{{i.short_description}}</b></h4></td>
+    </tr>
+    <tr>
+        <td><h3><b>Current Price : {{i.currentPrice}}</b></h3></td>
+        <td><h3><b>Base Price : {{i.basePrice}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Auction Date : {{i.start_date}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Sold status : {{i.sold}}</b></h3></td>
+    </tr>
+</table>
+<hr>
+{%endfor%}
+<div>
+    <p class="p">.</p>
+</div>
+
+<div >
+    <h2><center><font color="green">Item that you are bidded!!</center></font></center></h2>
+</div>
+{% for i in biddeditem%}
+<table width=100%>
+    <tr>
+        <td colspan="2"><h1><b>{{i.name}}</b></h1></td>
+        <td rowspan="5"><img src="{{i.profile.url}}" class="img" alt=""></td>
+    </tr>
+    <tr>
+        <td colspan="2"><h4><b>{{i.short_description}}</b></h4></td>
+    </tr>
+    <tr>
+        <td><h3><b>Current Price : {{i.currentPrice}}</b></h3></td>
+        <td><h3><b>Base Price : {{i.basePrice}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Auction Date : {{i.start_date}}</b></h3></td>
+    </tr>
+    <tr>
+        <td colspan="2" ><h3><b>Sold status : {{i.sold}}</b></h3></td>
+    </tr>
+</table>
+<hr>
+{%endfor%}
+<div>
+    <p class="p">.</p>
+</div>
+
+
+{% endblock %}

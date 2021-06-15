@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Register</title>	
+</head>
+<body bgcolor="#f1f1f1">
+	<br><br><br><br><br><br>
+	<br><br><br><br><br>
+	<table align="center" bgcolor="#f1f1f1" border="2">
+			<form action="/register" method="POST">{% csrf_token %}
+		<tr>
+			<td>Enter Username</td> 
+			<td><input type="text" name="name" required></td>
+		</tr>
+		<tr>
+			<td>E-mail</td> 
+			<td><input type="email" name="email" required></td>
+        </tr>
+       <tr>
+			<td>Enter Password</td> 
+			<td><input type="password" name="p1" required></td>
+		</tr>
+		<tr>
+			<td>Re-enter Password </td>
+			<td><input type="password" name="p2" required></td>
+		</tr>
+		<tr>
+			<td align="center"><input type="submit" value="submit"></td>
+			<td align="center"><input type="reset" value="Reset"></td>
+		<tr>
+	</form>
+	</table>
+	<div>
+		{% for m in messages %}
+			<center><font color="red"><h2>{{m}}</h2></font></center>
+		{% endfor %}
+	</div>
+</body>
+</html>

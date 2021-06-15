@@ -1,0 +1,51 @@
+  
+{% extends 'base2.html' %}
+{% block content %}
+<div class="main">
+    <table border="0">
+        <tr >
+            <td><b><font size="30">Tag :</font></b></td>
+            <td><b><font size="30">{{item.tag}}</font></b></td>
+        </tr>
+        <tr >
+            <td><b><font size="30">Name :</font></b></td>
+            <td><b><font size="30">{{item.name}}</font></b></td>
+        </tr>
+
+        <tr >
+            <td><b><font size="30">Short discription :</font></b></td>
+            <td><b><font size="30">{{item.short_description}}</font></b></td>
+        </tr>
+        <tr >
+            <td><b><font size="30">Long discription :</font></b></td>
+            <td><b><font size="30">{{item.long_description}}</font></b></td>
+        </tr>
+        <tr >
+            <td><b><font size="30">Base price :</font></b></td>
+            <td><b><font size="30">{{item.basePrice}}</font></b></td>
+        </tr>
+        <tr >
+            <td><b><font size="30">Current pice:</font></b></td>
+            <td><b><font size="30">{{item.currentPrice}}</font></b></td>
+        </tr>
+    </table>
+</div>
+<div class="main">
+<img src={{item.profile.url}} class="mainimg" alt="not" height="300" width="400"> 
+</div>
+<div class="main">
+    {%if item.img1%}<img src={{item.img1.url}} class="img" > {%endif%}
+    {%if item.img2%}<img src={{item.img2.url}} class="img" >{%endif%}
+</div>
+<div class="main">
+    {%if item.img3%}<img src={{item.img3.url}} class="img" alt=""> {%endif%}
+    {%if item.img4%}<img src={{item.img4.url}} class="img" alt=""> {%endif%}
+</div>
+<div class="main">
+    <form action="validate">
+    <input type="number" name="bidrs" class="button" placeholder="Enter your amount" min={{item.currentPrice}}>
+    <input type="hidden" name="iid" value={{item.id}}>
+    <input type="submit" class="button" value="Bidnow">
+    </form>
+</div>
+{% endblock %}

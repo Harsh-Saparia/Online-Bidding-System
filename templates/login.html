@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body bgcolor="#f1f1f1">
+	<br><br><br><br><br><br>
+	<form action="" method="post">{% csrf_token %}
+	
+	<center>	Username &nbsp;&nbsp;<input type="text" name="un" required></center><br><br>
+	<center>	Password  &nbsp;<input type="password" name="pa" required></center><br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;
+	<center><input type="submit" value="Login" name="login"><br><br>
+	<center>	New User? <a href="register">Register</a></center><br>
+	<center><a href="password-reset">Forgot password?</a></center>
+	</form>
+	<div>
+		{% for m in messages %}
+			<center><font color="red"><h2>{{m}}</h2></font></center>
+		{% endfor %}
+	</div>
+</body>
+</html>

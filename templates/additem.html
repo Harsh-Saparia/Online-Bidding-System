@@ -1,0 +1,65 @@
+<html>
+    <body bgcolor="#f1f1f1">
+        <form action="additem" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <br><br><br><br><br><br><br>
+            <center><table border="1"  >
+                <tr>
+                    <td>Item name</td>
+                    <td><input type="text" name="iname"  size="53" required></td>
+                </tr>
+                <tr>
+                    
+                    <td>profile image:</td>
+                    <td><input type="file"  name="img" accept="image/*" required></td>
+                </tr>
+                <tr>
+                    
+                    <td>Optional image1:</td>
+                    <td><input type="file"  name="img1" accept="image/*" ></td>
+                </tr>
+                <tr>
+                    
+                    <td>Optional image2:</td>
+                    <td><input type="file"  name="img2" accept="image/*" ></td>
+                </tr>
+                <tr>
+                    
+                    <td>Optional image3:</td>
+                    <td><input type="file"  name="img3" accept="image/*" ></td>
+                </tr>
+                <tr>
+                    
+                    <td>Optional image4:</td>
+                    <td><input type="file"  name="img4" accept="image/*" ></td>
+                </tr>
+                <tr>
+                    <td>Tag</td>
+                    <td><input type="text" name="itag" size="53" required></td>
+                </tr>
+                <tr>
+                    <td>Short discription</td>
+                    <td><input type="text" maxlength="50" size="53" name="sdis" required></textarea></td>
+                </tr>
+                <tr>
+                    <td>long discription</td>
+                    <td><textarea rows="5" cols="50" name="ldis"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Set base price</td>
+                    <td><input type="text"  size="53" name="iprice" placeholder="Enter integer price"></td>
+                </tr>
+                <tr>
+                    <td>Auction date</td>
+                    <td><input type="date"  name="s_date" required></td>
+                </tr>
+                
+                <tr>
+					<td colspan="2" align="center"><input type="submit" value="Upload"></td>
+				</tr>
+            </table></center>
+        </form>
+        {% for m in messages %}
+			<center><font color="red"><h2>{{m}}</h2></font></center>
+		{% endfor %}
+    </body>
+</html>
